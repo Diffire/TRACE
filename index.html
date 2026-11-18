@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c201e">
+  <meta name="description" content="TRACE coordinates body adaptation, action timing, and experience-driven revision for multi-stage humanoid manipulation.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="TRACE — Task-aware Runtime Agent Coordination">
+  <meta property="og:description" content="Closed-loop coordination for embodied manipulation. 89% real-robot task success across 100 episodes.">
+  <meta property="og:image" content="assets/task-chain.png">
+  <title>TRACE | Task-aware Runtime Agent Coordination</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">◌</span> TRACE<span class="brand-dot">.</span></a>
+      <div class="nav-links">
+        <a href="#overview">Overview</a><a href="#method">Method</a><a href="#results">Results</a><a href="#demo">Demo</a><a href="#citation">Citation</a>
+      </div>
+      <a class="nav-paper" href="TRACE_paper.pdf" target="_blank" rel="noopener">Read paper <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      
+      <div class="container hero-inner">
+        <div class="eyebrow"><span class="eyebrow-line"></span> PROJECT PAGE · HUMANOID MANIPULATION</div>
+        <h1>TRACE: Task-aware Runtime Agent Coordination for Embodied Manipulation</h1>
+        
+        <p class="hero-copy">A runtime framework for coordinating whole-body adaptation, action timing, and experience-guided revision in multi-stage humanoid manipulation.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="TRACE_paper.pdf" target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a>
+          <a class="button button-outline" href="#method">Method overview <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-visual">
+          <div class="visual-topline"><span>REAL-ROBOT TASK PROGRESSION</span><span>REAL ROBOT</span></div>
+          <img src="assets/task-chain.png" alt="Real-robot image sequence contrasting repeated unsuccessful direct VLA attempts with multi-stage progression under TRACE" fetchpriority="high">
+          <div class="visual-caption">Direct VLA attempts and TRACE-assisted execution in a multi-stage manipulation task.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section overview" id="overview">
+      <div class="container section-grid">
+        <div><div class="section-kicker">THE IDEA</div><h2>The problem: execution conditions change across task stages.</h2></div>
+        <div class="overview-text"><p>After navigation, small stance errors can put a target out of reach. During asynchronous inference, replanning can replace a contact action before it finishes. TRACE treats these as execution conditions to diagnose and revise at runtime.</p><p>Its agent combines task goals, visual feedback, predicted actions, publication records, and measured states. It selects an intervention, checks the physical result, and preserves useful experience for the next decision.</p></div>
+      </div>
+      <div class="container loop-strip" aria-label="TRACE closed loop"><span>Observe</span><b>→</b><span>Diagnose</span><b>→</b><span>Adapt</span><b>→</b><span>Verify</span><b>→</b><span>Revise</span></div>
+    </section>
+
+    <section class="section method" id="method">
+      <div class="container">
+        <div class="section-heading"><div><div class="section-kicker">THE FRAMEWORK</div><h2>TRACE framework</h2></div><p>TRACE joins body preparation, execution timing, and historical experience around a shared feedback loop.</p></div>
+        <div class="framework-card"><img src="assets/framework.png" alt="TRACE framework diagram showing assess state, adapt execution with body motion and action timing, and reflect and revise with historical experience" loading="lazy"><p>TRACE observes the task, selects and configures tools, then verifies the realized effect before the next turn.</p></div>
+        <div class="method-cards">
+          <article class="method-card"><span class="card-number">01 / SPATIAL</span><div class="card-icon" aria-hidden="true">↗</div><h3>Prepare the body</h3><p>Goal-conditioned SMPL motion adjusts the operating pose and is translated for SONIC whole-body execution.</p></article>
+          <article class="method-card"><span class="card-number">02 / TEMPORAL</span><div class="card-icon" aria-hidden="true">⌁</div><h3>Keep actions coherent</h3><p>Adaptive RTC handles inference delay while bounded phase preservation lets selected interactions finish.</p></article>
+          <article class="method-card"><span class="card-number">03 / EXPERIENCE</span><div class="card-icon" aria-hidden="true">↺</div><h3>Learn from outcomes</h3><p>Measured effects and task progress inform the next diagnosis and intervention, across execution turns.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section results" id="results">
+      <div class="container">
+        <div class="section-heading"><div><div class="section-kicker">REAL-ROBOT RESULTS</div><h2>Real-robot evaluation</h2></div><p>Door-opening and object-grasping tasks following navigation; 100 episodes per method.</p></div>
+        <figure class="academic-figure">
+          <img src="assets/task-results.svg" alt="Task success: TRACE 89%, RTC-only 52%, without SMPL 61%, without phase preservation 66%. Human interventions per task: TRACE 0.35, RTC-only 1.20." loading="lazy">
+          <figcaption><strong>Figure 2.</strong> Real-robot task success and mean human interventions over 100 episodes per method. Error bars show Wilson 95% confidence intervals for success.</figcaption>
+        </figure>
+        <p class="result-note">TRACE improves success over RTC-only by 37 percentage points. The SMPL and phase-preservation ablations reach 61% and 66%, respectively.</p>
+      </div>
+    </section>
+
+    <section class="section demo" id="demo">
+      <div class="container">
+        <div class="section-heading"><div><div class="section-kicker">BEYOND THE NUMBERS</div><h2>Motion transfer and pose adjustment</h2></div><p>From generated whole-body references to measured SONIC execution in simulation.</p></div>
+        <div class="demo-layout"><div class="video-frame"><video controls playsinline preload="none" poster="assets/motion-poster.png"><source src="assets/motion-gallery.mp4" type="video/mp4">Your browser does not support HTML video.</video></div><div class="demo-side"><span class="micro-label">MOTION GALLERY</span><h3>Whole-body motion, carried through to execution.</h3><p>The gallery compares generated SMPL motions with their measured SONIC simulation counterparts for multiple upper-body movements.</p><div class="demo-note">Generated reference <span>→</span> Measured execution</div></div></div>
+        <figure class="academic-figure">
+          <img src="assets/pose-adjustment.svg" alt="Simulation pose adjustment across four directions, 100 executions per direction: mean displacement and planar endpoint error with standard-deviation error bars." loading="lazy">
+          <figcaption><strong>Figure 3.</strong> Short SMPL–SONIC motions provide repeatable local pose adjustment. Each direction contains 100 simulator executions; bars show mean ± standard deviation.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section abstract" id="abstract"><div class="container abstract-inner"><div><div class="section-kicker">ABSTRACT</div><h2>Abstract</h2></div><p>Multi-stage humanoid manipulation requires each execution turn to establish suitable body configurations and interaction conditions for the next. Task stagnation can arise from unsuitable reach or repeated replacement of critical actions during asynchronous inference, requiring interventions grounded in execution evidence. We introduce TRACE, a task-aware runtime Agent coordination framework. The Agent combines task goals, visual feedback, predicted actions, publication records, and measured states to diagnose execution bottlenecks, jointly consider operating pose and policy-execution parameters, and select and configure appropriate tools. After each intervention, it verifies the realized effect and distills execution outcomes into historical experience for revising subsequent decisions. This connects diagnosis, intervention, verification, and revision across turns. TRACE keeps VLA and SONIC weights fixed, adapting operating conditions, execution settings, and task memory at runtime. In real-robot experiments with 100 episodes per method, TRACE achieves 89% task success, outperforming RTC-only by 37 percentage points while reducing mean human interventions from 1.20 to 0.35 per task. Removing SMPL adaptation or phase-aware preservation reduces success to 61% and 66%, respectively, supporting the contribution of spatial preparation and execution continuity to task completion.</p></div></section>
+
+    <section class="section citation" id="citation"><div class="container citation-inner"><div><div class="section-kicker">CITATION</div><h2>Paper</h2><p>Methods, experimental setup, component studies, and further analysis are available in the manuscript.</p><a class="button button-primary" href="TRACE_paper.pdf" target="_blank" rel="noopener">Open PDF <span aria-hidden="true">↗</span></a></div><div class="citation-panel"><span>TRACE / PAPER</span><h3>Task-aware Runtime Agent Coordination for Embodied Manipulation</h3><p>Research manuscript · 2027</p><a href="TRACE_paper.pdf" download>Download PDF <span aria-hidden="true">↓</span></a></div></div></section>
+  </main>
+  <footer><div class="container footer-inner"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">◌</span> TRACE<span class="brand-dot">.</span></a><p>Task-aware Runtime Agent Coordination for Embodied Manipulation</p><a href="#top">Back to top ↑</a></div></footer>
+</body>
+</html>
