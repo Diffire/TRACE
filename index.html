@@ -68,11 +68,10 @@
     <section class="section results" id="results">
       <div class="container">
         <div class="section-heading"><div><div class="section-kicker">REAL-ROBOT RESULTS</div><h2>Real-robot evaluation</h2></div><p>Door-opening and object-grasping tasks following navigation; 100 episodes per method.</p></div>
-        <figure class="academic-figure">
-          <img src="assets/task-results.svg" alt="Task success: TRACE 89%, RTC-only 52%, without SMPL 61%, without phase preservation 66%. Human interventions per task: TRACE 0.35, RTC-only 1.20." loading="lazy">
-          <figcaption><strong>Figure 2.</strong> Real-robot task success and mean human interventions over 100 episodes per method. Error bars show Wilson 95% confidence intervals for success.</figcaption>
-        </figure>
-        <p class="result-note">TRACE improves success over RTC-only by 37 percentage points. The SMPL and phase-preservation ablations reach 61% and 66%, respectively.</p>
+        <div class="pose-card evidence-card">
+          <div class="evidence-copy"><span class="micro-label">REAL-ROBOT EVALUATION</span><h3>Higher task success, fewer interventions</h3><p>TRACE completes 89 of 100 tasks, versus 52 for RTC-only. Mean human interventions fall from 1.20 to 0.35 per task. Whiskers show Wilson 95% confidence intervals.</p></div>
+          <img src="assets/results-template.png" alt="Two-panel evaluation figure: 89% TRACE success versus 52% RTC-only, 61% without SMPL, and 66% without preservation; mean human interventions 0.35 versus 1.20" loading="lazy">
+        </div>
       </div>
     </section>
 
@@ -80,10 +79,10 @@
       <div class="container">
         <div class="section-heading"><div><div class="section-kicker">BEYOND THE NUMBERS</div><h2>Motion transfer and pose adjustment</h2></div><p>From generated whole-body references to measured SONIC execution in simulation.</p></div>
         <div class="demo-layout"><div class="video-frame"><video controls playsinline preload="none" poster="assets/motion-poster.png"><source src="assets/motion-gallery.mp4" type="video/mp4">Your browser does not support HTML video.</video></div><div class="demo-side"><span class="micro-label">MOTION GALLERY</span><h3>Whole-body motion, carried through to execution.</h3><p>The gallery compares generated SMPL motions with their measured SONIC simulation counterparts for multiple upper-body movements.</p><div class="demo-note">Generated reference <span>→</span> Measured execution</div></div></div>
-        <figure class="academic-figure">
-          <img src="assets/pose-adjustment.svg" alt="Simulation pose adjustment across four directions, 100 executions per direction: mean displacement and planar endpoint error with standard-deviation error bars." loading="lazy">
-          <figcaption><strong>Figure 3.</strong> Short SMPL–SONIC motions provide repeatable local pose adjustment. Each direction contains 100 simulator executions; bars show mean ± standard deviation.</figcaption>
-        </figure>
+        <div class="pose-card evidence-card">
+          <div class="evidence-copy"><span class="micro-label">SPATIAL ADAPTATION</span><h3>Centimeter-scale pose adjustment</h3><p>Repeatable forward, backward, left, and right corrections bring the robot toward a more useful operating pose. Each direction contains 100 simulator executions.</p></div>
+          <img src="assets/smpl.png" alt="Two-panel pose-adjustment figure with directed displacement and endpoint error for forward, backward, left, and right movements" loading="lazy">
+        </div>
       </div>
     </section>
 
