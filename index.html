@@ -6,10 +6,10 @@
   <meta name="theme-color" content="#091311">
   <meta name="description" content="TRACE coordinates body adaptation, action timing, and experience-driven revision for multi-stage humanoid manipulation.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="TRACE — Task-aware Runtime Agent Coordination">
-  <meta property="og:description" content="Closed-loop coordination for embodied manipulation. 89% real-robot task success across 100 episodes.">
+  <meta property="og:title" content="TRACE: Task-aware Runtime Agent Coordination for Humanoid Manipulation">
+  <meta property="og:description" content="Closed-loop coordination for humanoid manipulation. 89% real-robot task success across 100 episodes.">
   <meta property="og:image" content="assets/task-chain.png">
-  <title>TRACE | Task-aware Runtime Agent Coordination</title>
+  <title>TRACE: Task-aware Runtime Agent Coordination for Humanoid Manipulation</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -30,7 +30,7 @@
       
       <div class="container hero-inner">
         <div class="eyebrow"><span class="eyebrow-line"></span> WHOLE-BODY CONTROL · RUNTIME COORDINATION</div>
-        <div class="trace-wordmark"><img class="trace-metal" src="assets/trace-wordmark-3d.png" alt="TRACE" width="2160" height="720" fetchpriority="high"></div><h1><span class="sr-only">TRACE: </span>Task-aware Runtime Agent Coordination<br class="desktop-break"> for Embodied Manipulation</h1>
+        <div class="trace-wordmark"><img class="trace-metal" src="assets/trace-wordmark-3d.png" alt="TRACE" width="2160" height="720" fetchpriority="high"></div><h1><span class="sr-only">TRACE: </span>Task-aware Runtime Agent Coordination<br class="desktop-break"> for Humanoid Manipulation</h1>
         
 
         <div class="authors" aria-label="Authors"><span>Yuchen Huang</span><span>Han Yu</span><span>Minghua Liu</span><span>Jintao Xu</span><span>Shuo Bao</span><span>Shuo Tian</span><span>Yilong Qiu</span><span>Yifan Wang</span><span>Jiangtao Wang</span><span>Ling Tak Chung</span><span>Bingqing Zhao</span><span>Xinzhou Wang<sup>†</sup></span></div>
@@ -92,8 +92,8 @@
 
     <section class="section abstract" id="abstract"><div class="container abstract-inner"><div><div class="section-kicker">ABSTRACT</div><h2>Abstract</h2></div><p>Multi-stage humanoid manipulation requires each execution turn to establish suitable body configurations and interaction conditions for the next. Task stagnation can arise from unsuitable reach or repeated replacement of critical actions during asynchronous inference, requiring interventions grounded in execution evidence. We introduce TRACE, a task-aware runtime Agent coordination framework. The Agent combines task goals, visual feedback, predicted actions, publication records, and measured states to diagnose execution bottlenecks, jointly consider operating pose and policy-execution parameters, and select and configure appropriate tools. After each intervention, it verifies the realized effect and distills execution outcomes into historical experience for revising subsequent decisions. This connects diagnosis, intervention, verification, and revision across turns. TRACE keeps VLA and SONIC weights fixed, adapting operating conditions, execution settings, and task memory at runtime. In real-robot experiments with 100 episodes per method, TRACE achieves 89% task success, outperforming RTC-only by 37 percentage points while reducing mean human interventions from 1.20 to 0.35 per task. Removing SMPL adaptation or phase-aware preservation reduces success to 61% and 66%, respectively, supporting the contribution of spatial preparation and execution continuity to task completion.</p></div></section>
 
-    <section class="section citation" id="citation"><div class="container citation-inner"><div><div class="section-kicker">CITATION</div><h2>Paper</h2><p>Methods, experimental setup, component studies, and further analysis are available in the manuscript.</p><a class="button button-primary" href="TRACE_paper.pdf" target="_blank" rel="noopener">Open PDF</a></div><div class="citation-panel"><span>TRACE / PAPER</span><h3>Task-aware Runtime Agent Coordination for Embodied Manipulation</h3><p>Research manuscript</p><a href="TRACE_paper.pdf" download>Download PDF</a></div></div></section>
+    <section class="section citation" id="citation"><div class="container citation-inner"><div><div class="section-kicker">CITATION</div><h2>Paper</h2><p>Methods, experimental setup, component studies, and further analysis are available in the manuscript.</p><a class="button button-primary" href="TRACE_paper.pdf" target="_blank" rel="noopener">Open PDF</a></div><div class="citation-panel"><span>TRACE / PAPER</span><h3>Task-aware Runtime Agent Coordination for Humanoid Manipulation</h3><p>Research manuscript</p><a href="TRACE_paper.pdf" download>Download PDF</a></div></div></section>
   </main>
-  <footer><div class="container footer-inner"><a class="brand" href="#top"><svg class="brand-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 8h20M16 8v18M7 17l9 9 9-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="5" r="3" fill="currentColor"/></svg>TRACE<span class="brand-dot">.</span></a><p>Task-aware Runtime Agent Coordination for Embodied Manipulation</p><a href="#top">Back to top</a></div></footer>
+  <footer><div class="container footer-inner"><a class="brand" href="#top"><svg class="brand-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 8h20M16 8v18M7 17l9 9 9-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="5" r="3" fill="currentColor"/></svg>TRACE<span class="brand-dot">.</span></a><p>Task-aware Runtime Agent Coordination for Humanoid Manipulation</p><a href="#top">Back to top</a></div></footer>
 </body>
 </html>
